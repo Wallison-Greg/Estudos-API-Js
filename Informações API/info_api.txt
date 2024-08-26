@@ -1,0 +1,24 @@
+Oque são APIs = Application Programming Interface (interface de programação de aplicações) basicamente APIs são comunicações feitas entre o front e o back-end no caso sendo feitas requisições pelo usuario no browser recebendo a resposta pelo lado do servidor  
+
+Oque são APIs Rest = Basicamente e um conjunto de restrições para criação de APIs, utilizando de forma padronizada o protocolo HTTP para criar as APIs.
+
+Para criarmos uma API Rest e necessario utilizar de forma restrita oque o HTTP nos oferece:
+# Status Code
+# Verbos HTTP
+# Rotas
+
+Verbos HTTP em APIs: 
+1 - GET: utilizado para obter dados 
+2 - POST: utilizado para enviar dados
+3 - PUT: utilizado para atualizar dados substituindo o objeto por completo
+4 - PATCH: utilizado para atualizar dados substituindo apenas oque foi modificado
+5 - DELETE: utilizado para excluir um registro no servidor
+6 - OPTIONS: permite acesso de dominios diferentes 
+
+Status code "mensage para o usuario":
+1 - 200: sucesso 
+2 - 201: cadastro feito
+3 - 204: sucesso mais sem conteudo de retorno 
+4 - 401: não autorizado
+5 - 404: não encontrado
+6 - 500: erro no servidor 

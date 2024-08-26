@@ -1,0 +1,18 @@
+Pacotes a serem instalados para se criar uma API Rest.
+
+- Pacotes basicos de uma API:
+# iniciar projeto Node.js: npm i -y
+# instalar express: npm i express
+# instalar mongoose: npm i mongoose
+
+- Pacotes para proteção de senhas 
+# instalar jwt: npm i jsonwebtoken
+# instalar bcrypt: npm i bcrypt
+# instalar dotenv: npm i dotenv
+
+- Pacote para atualizar as alterações do codigo
+# instalar nodemon: npm i nodemon
+
+nodemon: utilizamos eles para renderizar as mudanças do projeto em tempo real, ou seja, qualquer alteração que for feita no projeto o nodemon ira da um restart no projeto 
+
+Para isso precisamos instalar suas dependencias utilizando o comando "npm i nodemon" e colocar dentro do arquivo "package.json" na parte dos scripts o comando que ira da o restart no sistema assim como foi feito nesse projeto 

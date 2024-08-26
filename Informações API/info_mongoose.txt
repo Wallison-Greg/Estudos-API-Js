@@ -1,0 +1,44 @@
+MongoDB=  e o banco de dados não relacional "NoSQL" bastante utilizado em desenvolvimento web pelo fato sele utilizar o armazaenamento dos dados em json ao invez de se utilizar o modelo de tabelas 
+
+O MongoDB tem como ser utilizado tambem em clound ou seja realizando o armazenamento dos dados em nuvem 
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Terminologia MongoDB:
+1 - Collections = As coleções ou 'Collections', no MongoDB são equivalentes às tabelas dos bancos de dados relacionais, podendo guardar múltiplos documentos JSON.
+
+2 - Documents = Os documentos ou 'Documents', equivalem aos registros ou às linhas de dados no SQL. 
+
+3 - Fields = Os campos ou 'Fields', são similares a colunas em uma tabela SQL.
+
+4 - Schema = Embora o MongoDB não possua esquemas, o SQL define esquemas por meio da definição de uma tabela. Um "esquema" no Mongoose é uma estrutura de dados de documento (ou a forma de um documento), que é aplicada por meio da camada da aplicação.
+
+5 - Models = Os modelos ou 'Models', são construtores de ordem superior, que utilizam um esquema e instanciam um documento, equivalente aos registros de um banco de dados relacional.
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Pacotes a ser instalados:
+# instalar mongoose = npm i mongoose
+# instalar mongoDB = npm i mongodb
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Comandos utilizados no MongoDB:
+(Connect) = utilizamos esse metodo para gerar a conexão com o banco de dados, para isso devemos passar como parametro a "string de conexão" contendo a URL de ligação com o banco tendo o nome do "Database" e a senha.
+Esse metodo recebe dois metodos "then" e "catch", caso a conexão seja feita com sucesse ele ira cair no metodo "then" executando os comandos que estiver cotido dentro dele, caso de erro ele ira cair no metodo "catch" onde ira mandar uma mensage de erro 
+
+(Schema) = utilizamos esse metodo para definirmos os valores e os tipos de valores que serão adicionados dentro do nosso modelos
+
+(Model) = utilizamos esse metodo para gerar a nossa tabela no banco de dados recebendo os valores contido dentro do schema 
+
+(Save) = utilizamos esse metodo para salvar um registro dentro do banco de dados 
+
+(Create) = esse metodo e similar ao "save", o seu diferencial e que podemos definir para qual modelo os valores irão ser passados 
+
+(Find) = utilizamos esse metodo para resgatar os dados do banco de dados, ou seja, com ele resgatamos todos os dados do banco 
+
+(FindOne) =  esse metodo e similar ao metodo "find", o seu diferencial e que com ele podemos trazer um unico elemento do banco de acordo com o parametro de busca passado para dentro dele (que em geral se utiliza o "id")
+
+(UpdateOne) = utilizamos esse metodo para atualizar os dados em especifico do banco, nesse metodo e necessario passarmos dois parametro sendo o primeiro o filtro que ira definir qual dado sera atualizado e o segundo parametro sera o valor novo a ser passado
+
+(DeleteOne) = utilizamos esse metodo para deletar dados do banco, para utilizarmos esse metodo temos que passar o parametro que ira definir qual dado sera removido (que em geral se utiliza o "id")
