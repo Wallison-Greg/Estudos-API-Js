@@ -60,3 +60,11 @@ app.patch('/:id', async(req,res) => {
     await cachorros.updateOne({_id: req.params.id}, newPet)
     res.send("dados atualizados")
 })
+
+//excluindo os dados de acordo com o id 
+
+app.delete('/:id', async(req,res) => {
+    await cachorros.deleteOne({_id: req.params.id})
+
+    res.send("dados deletados")
+})
