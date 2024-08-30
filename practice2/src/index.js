@@ -4,6 +4,7 @@ require("dotenv").config();
 //pacotes
 const express =  require("express");
 const mongoose = require("mongoose");
+const rotas = require("./routes/router")
 
 const app =  express();
 
@@ -14,10 +15,12 @@ app.use(express.json())
 //modelo
 const User = require('./model/User');
 
-//routas
+//rotas
 app.get("/", (req, res) => {
     res.json({msg: "API RestFull"})
 })
+
+app.use(rotas)
 
 
 //porta de acesso e conexão com o banco

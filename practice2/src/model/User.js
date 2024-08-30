@@ -5,7 +5,7 @@ const User = mongoose.model("User", {
     idade: Number,
     peso: Number,
     cor: String,
-    uf: String
+    cpf: String
 })
 
 module.exports = User;
