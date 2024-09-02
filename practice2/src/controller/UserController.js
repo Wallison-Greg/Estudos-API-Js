@@ -1,5 +1,6 @@
 const DbUser = require("../model/User");
-const { default: mongoose } = require("mongoose");
+const express = require('express');
+//const { default: mongoose } = require("mongoose");
 
 const createUser = async (req, res) => {
 
@@ -63,11 +64,11 @@ const getAllUsers = async (req, res) => {
 
 const getUser = async (req, res) => {
 
-    const {id} =  req.params;
+    const {cpf} = req.params
 
     try {
 
-        const user = await DbUser.findOne(mongoose.Types.ObjectId(id))
+        const user = await DbUser.findOne({cpf: cpf})
         res.status(200).json({user: user});
  
     } catch (error) {
