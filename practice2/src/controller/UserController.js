@@ -1,6 +1,4 @@
 const DbUser = require("../model/User");
-const express = require('express');
-//const { default: mongoose } = require("mongoose");
 
 const createUser = async (req, res) => {
 
@@ -69,6 +67,7 @@ const getUser = async (req, res) => {
     try {
 
         const user = await DbUser.findOne({cpf: cpf})
+
         res.status(200).json({user: user});
  
     } catch (error) {
@@ -76,4 +75,48 @@ const getUser = async (req, res) => {
     }
 }
 
-module.exports = {createUser, getAllUsers, getUser}
+const updateUser = async (req, res) => {
+    const {cpf} = req.params
+    const {nome, idade, peso, cor} = req.body
+
+    try {
+
+        await DbUser.updateOne({cpf: cpf}, {
+            nome: nome,
+            idade: idade,
+            peso: peso,
+            cor: cor
+        })
+
+        res.status(200).json({msg: "dados atualizados com sucesso"})
+        
+    } catch (error) {
+        res.status(500).json({msg: error})
+    }
+}
+
+const deleteUser = async (req, res) => {
+    const {cpf} = req.params
+
+    //verificando se o cpf e valido
+    const userExists = await DbUser.findOne({cpf: cpf});
+
+    if(!userExists){
+        res.status(401).json({msg: "por favor insira um cpf valido"});
+        return
+    }
+
+    try {
+
+        await DbUser.deleteOne(userExists)
+
+        res.status(200).json({msg: "usuario deletado do sistema"})
+        
+    } catch (error) {
+        res.status(500).json({msg: error})
+    }
+
+
+}
+
+module.exports = {createUser, getAllUsers, getUser, updateUser, deleteUser}

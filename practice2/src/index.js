@@ -16,10 +16,6 @@ app.use(express.json())
 const User = require('./model/User');
 
 //rotas
-app.get("/", (req, res) => {
-    res.json({msg: "API RestFull"})
-})
-
 app.use(rotas)
 
 
