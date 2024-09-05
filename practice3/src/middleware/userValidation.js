@@ -1,0 +1,1 @@
+const DbUser = require("../model/User");
