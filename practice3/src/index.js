@@ -4,8 +4,7 @@ require("dotenv").config();
 //pacotes
 const express = require("express");
 const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
+const rotas = require("./routes/router")
 
 const app = express();
 
@@ -14,9 +13,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json())
 
 //rotas
-app.get("/", (req, res) => {
-    res.send("start")
-})
+app.use(rotas);
 
 //conexão db
 mongoose.connect(`mongodb+srv://${process.env.DB_NAME}:${process.env.DB_PASS}@cluster0.ir4jc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`)

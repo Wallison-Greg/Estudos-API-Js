@@ -1,1 +1,0 @@
-const DbProduct = require("../model/Product");
